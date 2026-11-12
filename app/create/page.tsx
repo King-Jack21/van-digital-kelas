@@ -1,0 +1,2 @@
+import {requireRole} from '@/lib/auth';import {CreateClassForm} from '@/components/action-forms';
+export default async function Page(){await requireRole(['teacher','owner']);return <main className="main-area"><section className="module-hero"><p className="eyebrow">CLASSROOM</p><h1>Buat kelas baru</h1><p>Bangun ruang belajar untuk siswa Anda.</p></section><section className="panel" style={{maxWidth:650}}><CreateClassForm/></section></main>}
