@@ -1,0 +1,2 @@
+import {requireRole} from '@/lib/auth';import {JoinClassForm} from '@/components/action-forms';
+export default async function Page(){await requireRole(['student']);return <main className="main-area"><section className="module-hero"><p className="eyebrow">CLASSROOM</p><h1>Gabung kelas</h1><p>Masukkan kode undangan yang diberikan teacher.</p></section><section className="panel" style={{maxWidth:650}}><JoinClassForm/></section></main>}
