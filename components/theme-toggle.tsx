@@ -1,0 +1,3 @@
+'use client';
+import { useEffect,useState } from 'react'; import { Moon,Sun } from 'lucide-react';
+export function ThemeToggle(){const [light,setLight]=useState(false); useEffect(()=>{const saved=localStorage.getItem('van-theme');const v=saved==='light';setLight(v);document.documentElement.dataset.theme=v?'light':'dark';},[]);function toggle(){const v=!light;setLight(v);document.documentElement.dataset.theme=v?'light':'dark';localStorage.setItem('van-theme',v?'light':'dark');}return <button className="icon-btn theme-toggle" onClick={toggle} aria-label="Toggle theme">{light?<Sun size={18}/>:<Moon size={18}/>}</button>}
